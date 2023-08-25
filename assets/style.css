@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* #7B68EE */
+/* #E0FFFF */
+/* #65c1fa */
+
+:root {
+    --color1: #e2f2fd;
+    --color2: #fefefe;
+    --color3: #7B68EE;
+    --color4: #55beff;
+    --btnHover: #87CEFA;
+    --text: #00000084;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background: var(--color1);
+}
+
+.active {
+    text-decoration: line-through;
+    color: rgb(159, 159, 159);
+}
+
+.todo-input {
+    padding-top: 50px;
+    padding-bottom: 10px;
+    width: 468px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: var(--color1);
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
+
+.todo-input h1 {
+    color: var(--color4);
+    text-align: center;
+    text-shadow: 0px 0px 5px #ffffff85;
+}
+
+.todo-input .input {
+    position: relative;
+    box-shadow: 0px 8px 20px -20px rgb(0, 0, 0);
+    border-radius: 10px;
+}
+
+.todo-input .input input {
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    height: 55px;
+    padding-left: 15px;
+    padding-right: 105px;
+}
+
+.todo-input .input button {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    padding: 0 10px;
+    background: var(--color4);
+    border: none;
+    border-radius: 10px;
+    color: var(--color2);
+    font-weight: 600;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.todo-input .input button:focus {
+    outline: none;
+    background: var(--btnHover);
+}
+
+.todo-input .input button:hover {
+    background: var(--btnHover);
+}
+
+.todo-input .input button i {
+    margin-right: 5px;
+    transition: .5s;
+}
+
+.todo-input .input button:hover i {
+    transform: rotate(180deg);
+}
+
+/* todo content */
+
+.todo-content {
+    width: 468px;
+    color: var(--color2);
+    margin-top: 175px;
+    padding-bottom: 20px;
+}
+
+.list-content li {
+    display: flex;
+    padding: 15px 10px;
+    padding-right: 15px;
+    justify-content: space-between;
+    background: var(--color2);
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: 0px 8px 20px -20px rgb(0, 0, 0);
+    margin-top: 10px;
+}
+
+.list-content li .content {
+    display: flex;
+    align-items: center;
+    color: #000;
+    font-size: 1.2rem;
+}
+
+.list-content li .content input {
+    height: 15px;
+    width: 15px;
+    margin-right: 10px;
+    margin-top: 1px;
+    cursor: pointer;
+}
+
+.list-content li .content input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: 2px solid var(--color4);
+    border-radius: 2px;
+    outline: none;
+    min-height: 20px;
+    min-width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+}
+
+.list-content li .content input[type="checkbox"]:hover {
+    background: var(--color4);
+}
+
+.list-content li .content input[type="checkbox"]:checked {
+    background: none;
+}
+
+.list-content li .content input[type="checkbox"]::after {
+    content: '✓';
+    color: var(--color4);
+    font-size: .8rem;
+    font-weight: 600;
+    display: none;
+}
+
+.list-content li .content input[type="checkbox"]:checked::after {
+    display: block;
+}
+
+.list-content li button {
+    margin-left: 18px;
+    background: none;
+    border: none;
+    color: var(--color4);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.list-content li button:hover {
+    color: var(--btnHover);
+}
+
+@media (max-width:468px) {
+    .todo-input {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .todo-content {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
